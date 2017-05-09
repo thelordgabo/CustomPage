@@ -8,6 +8,7 @@ app.service('textService', function($http, $q) {
   $http.get('js/json/textJson.json').then(function(data) {
       deferred.resolve(data);
   });
+  
   this.getText = function(){
       return deferred.promise;
   };
