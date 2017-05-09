@@ -3,7 +3,7 @@
     var app = angular.module('customPage');
     app.directive('specDirective', specDirective);
 
-    function specDirective(specService) {
+    function specDirective(jsonDataService) {
         var directive = {
             restrict: "E",
             templateUrl: 'specializations/specializations.template.html',
@@ -14,13 +14,16 @@
 
         return directive;
 
-        function specDirectiveController () {
+        function specDirectiveController() {
             var vm = this;
             vm.specializations = {};
-            var promise = specService.getSpecs();
-            promise.then(function(data) {
-                vm.specializations = data.data;
-            });
+
+            var data = jsonDataService.getData('js/json/textJson.json');
+            if (data) {
+                data.then(function (data) {
+                    vm.specializations = data;
+                });
+            }
         }
     }
 })();

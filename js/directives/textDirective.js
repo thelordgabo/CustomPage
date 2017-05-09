@@ -4,7 +4,7 @@
 
   app.directive('textDirective', textDirective);
 
-  function textDirective(textService) {
+  function textDirective(jsonDataService) {
     var directive = {
       restrict: "E",
       templateUrl: 'js/templates/textDirective.html',
@@ -23,9 +23,9 @@
         });
       }, 10);
       vm.textList = {};
-      var promise = textService.getText();
+      var promise = jsonDataService.getData('js/json/textJson.json');
       promise.then(function (data) {
-        vm.textList = data.data;
+        vm.textList = data;
       });
     }
   }
