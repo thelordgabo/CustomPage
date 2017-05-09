@@ -18,7 +18,7 @@
             var vm = this;
             vm.specializations = {};
 
-            var data = jsonDataService.getData('js/json/textJson.json');
+            var data = jsonDataService.getData('specializations/specializationsJson.json');
             if (data) {
                 data.then(function (data) {
                     vm.specializations = data;

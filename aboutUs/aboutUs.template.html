@@ -1,0 +1,18 @@
+<div class="text-center contact-container mt40 pt40 pb40">
+    <h2 class="text-center brown underlined pb40">{{vm.aboutUsInformation.contactType}}</h2>
+    <div class="information">
+        <h2 class="mb20">Phone</h2>
+        <div class="mb20" ng-repeat="phone in vm.aboutUsInformation.phones track by $index">
+            <p class="mb10">{{vm.aboutUsInformation.phones[$index]}}</p>
+            <p></p>
+        </div>
+        <h2 class="mb20">Email</h2>
+        <div class="mb20">
+            <a href="mailto:hello@test.net">vm.aboutUsInformation.email</a>
+        </div>
+        <h2 class="mb20">Adress</h2>
+        <div>
+            <p>{{vm.aboutUsInformation.address}}</p>
+        </div>
+    </div>
+</div>
