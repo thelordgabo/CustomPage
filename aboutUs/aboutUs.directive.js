@@ -1,5 +1,5 @@
 (function () {
-    var app = angular.module('customPage');
+    var app = angular.module('aboutUs');
 
     app.directive('aboutUs', aboutUs);
 
