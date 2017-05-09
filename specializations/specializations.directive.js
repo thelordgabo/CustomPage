@@ -8,20 +8,20 @@
             restrict: "E",
             templateUrl: 'specializations/specializations.template.html',
             controller: specDirectiveController,
-            controllerAs: 'vm',
+            controllerAs: 'me',
             bindToController: true
         };
 
         return directive;
 
         function specDirectiveController() {
-            var vm = this;
-            vm.specializations = {};
+            var me = this;
+            me.specializations = {};
 
             var data = jsonDataService.getData('specializations/specializationsJson.json');
             if (data) {
                 data.then(function (data) {
-                    vm.specializations = data;
+                    me.specializations = data;
                 });
             }
         }
